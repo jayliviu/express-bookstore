@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["isbn", "amazon_url", "author", "language", "pages", "publisher", "title", "year"],
+  "properties": {
+    "isbn": {
+      "type": "string",
+      "pattern": "^[0-9]{10,13}$",
+      "description": "Must be a valid ISBN number with 10 or 13 digits"
+    },
+    "amazon_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Must be a valid URL"
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1
+    },
+    "language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pages": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "publisher": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1900,
+      "maximum": 2100
+    }
+  },
+  "additionalProperties": false
+}
